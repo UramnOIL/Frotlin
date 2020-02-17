@@ -20,6 +20,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew shadowJar
+    - name: Zip
+      run: |
+        zip -j KtForm-all ./build/libs/KtForm-all.jar
     - name: Create a Release
       id: create-release
       uses: actions/create-release@v1
@@ -42,8 +45,8 @@ jobs:
         # The URL for uploading assets to the release
         upload_url: ${{ steps.create-release.outputs.upload_url }}
         # The path to the asset you want to upload
-        asset_path: ./build/libs/KtForm-all.jar
+        asset_path: ./build/libs/KtForm-all.zip
         # The name of the asset you want to upload
-        asset_name: KtForm.jar
+        asset_name: KtForm-all.zip
         # The content-type of the asset you want to upload. See the supported Media Types here: https://www.iana.org/assignments/media-types/media-types.xhtml for more information
-        asset_content_type: application/jar
+        asset_content_type: application/zip
