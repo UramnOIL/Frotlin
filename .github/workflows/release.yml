@@ -18,8 +18,10 @@ jobs:
         java-version: 11
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew shadowJar
+    - name: Test and Build with Gradle
+      run: |
+        ./gradlew test
+        ./gradlew shadowJar
     - name: Zip
       run: |
         zip -j KtForm-all ./build/libs/KtForm-all.jar
@@ -30,7 +32,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         # The name of the tag. This should come from the webhook payload, `github.GITHUB_REF` when a user pushes a new tag
-        tag_name: $${{ github.ref }}
+        tag_name: ${{ github.ref }}
         # The name of the release. For example, `Release v1.0.1`
         release_name: Release ${{ github.ref }}
         # `true` to create a draft (unpublished) release, `false` to create a published one. Default: `false`
