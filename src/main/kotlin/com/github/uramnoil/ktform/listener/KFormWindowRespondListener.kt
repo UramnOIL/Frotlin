@@ -12,7 +12,7 @@ class KFormWindowRespondListener : Listener {
         val window = event.window
         if (window is KFormWindowSimple) window.run {
             if (response != null) onSubmit.invoke(event.player, window.response.clickedButton as KElementButton)
-            else onCancel?.invoke(event.player)
+            else onCancel?.invoke(event.player)//a
         }
     }
 }
