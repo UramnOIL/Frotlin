@@ -1,4 +1,3 @@
-
 plugins {
     kotlin("jvm") version "1.3.61"
     id("com.github.johnrengelman.shadow") version "5.2.0"
@@ -7,6 +6,11 @@ plugins {
 
 group = "com.github.uramnoil"
 version = "1.0-SNAPSHOT"
+
+val GITHUB_TOKEN = "8ed6425507b387044c8d2d42b8c140fe00084382"
+val GITHUB_USER = "UramnOIL"
+
+defaultTasks("shadowJar")
 
 repositories {
     mavenCentral()
@@ -23,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    shadow(kotlin("stdlib"))
     compileOnly("cn.nukkit", "nukkit", "1.0-SNAPSHOT")
 }
 
