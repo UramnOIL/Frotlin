@@ -1,7 +1,7 @@
 name: CI
 
 on:
-  create:
+  push:
     tags:
     - v*
 
@@ -20,14 +20,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: artifact
-        # Directory containing files to upload
-        path: build/libs
     - name: Create a Release
+      id: create-release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,3 +34,14 @@ jobs:
         draft: false
         # `true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `false`
         prerelease: false
+    - name: Upload a Release Asset
+      uses: actions/upload-release-asset@v1.0.2
+      with:
+        # The URL for uploading assets to the release
+        upload_url: ${{ steps.create-release.outputs.upload_url }}
+        # The path to the asset you want to upload
+        asset_path: ./build/libs/*.jar
+        # The name of the asset you want to upload
+        asset_name: KtForm.jar
+        # The content-type of the asset you want to upload. See the supported Media Types here: https://www.iana.org/assignments/media-types/media-types.xhtml for more information
+        asset_content_type: application/jar
