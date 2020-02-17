@@ -1,2 +1,2 @@
-rootProject.name = "Frotlin"
+rootProject.name = "KtForm"
 
