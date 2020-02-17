@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.uramnoil"
-version = "1.0-SNAPSHOT"
+version = "0.1.0"
 
 val GITHUB_TOKEN = "8ed6425507b387044c8d2d42b8c140fe00084382"
 val GITHUB_USER = "UramnOIL"
