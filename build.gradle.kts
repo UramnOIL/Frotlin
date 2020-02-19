@@ -36,5 +36,5 @@ nukkit {
     main = "com.uramnoil.ktform.KtFormPlugin"
     api = listOf("1.0.9")
     author = "UramnOIL"
-    loadBefore = listOf("Kotlib")
+    depend = listOf("Kotlib")
 }
