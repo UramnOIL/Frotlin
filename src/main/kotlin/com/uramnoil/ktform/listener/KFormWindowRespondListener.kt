@@ -1,10 +1,10 @@
-package com.github.uramnoil.ktform.listener
+package com.uramnoil.ktform.listener
 
 import cn.nukkit.event.EventHandler
 import cn.nukkit.event.Listener
 import cn.nukkit.event.player.PlayerFormRespondedEvent
-import com.github.uramnoil.ktform.element.KElementButton
-import com.github.uramnoil.ktform.form.KFormWindowSimple
+import com.uramnoil.ktform.element.KElementButton
+import com.uramnoil.ktform.form.KFormWindowSimple
 
 class KFormWindowRespondListener : Listener {
     @EventHandler

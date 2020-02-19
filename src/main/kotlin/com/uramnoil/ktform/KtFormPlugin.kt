@@ -1,7 +1,7 @@
-package com.github.uramnoil.ktform
+package com.uramnoil.ktform
 
 import cn.nukkit.plugin.PluginBase
-import com.github.uramnoil.ktform.listener.KFormWindowRespondListener
+import com.uramnoil.ktform.listener.KFormWindowRespondListener
 
 class KtFormPlugin : PluginBase() {
     override fun onEnable() {

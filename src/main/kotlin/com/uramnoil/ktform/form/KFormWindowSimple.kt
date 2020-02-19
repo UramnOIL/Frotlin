@@ -1,8 +1,8 @@
-package com.github.uramnoil.ktform.form
+package com.uramnoil.ktform.form
 
 import cn.nukkit.Player
 import cn.nukkit.form.window.FormWindowSimple
-import com.github.uramnoil.ktform.element.KElementButton
+import com.uramnoil.ktform.element.KElementButton
 
 open class KFormWindowSimple(
     title: String,

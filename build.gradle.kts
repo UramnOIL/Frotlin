@@ -4,18 +4,11 @@ plugins {
     id("net.minecrell.plugin-yml.nukkit") version "0.3.0"
 }
 
-group = "com.github.uramnoil"
+group = "com.uramnoil"
 version = "0.1.5"
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     archiveVersion.set("")
-}
-
-repositories {
-    mavenCentral()
-    maven {
-        url = uri("https://repo.nukkitx.com/snapshot/")
-    }
 }
 
 repositories {
@@ -26,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    shadow(kotlin("stdlib"))
+    compileOnly(kotlin("stdlib"))
     compileOnly("cn.nukkit", "nukkit", "1.0-SNAPSHOT")
 }
 
@@ -40,7 +33,8 @@ tasks {
 }
 
 nukkit {
-    main = "com.github.uramnoil.ktform.KtFormPlugin"
+    main = "com.uramnoil.ktform.KtFormPlugin"
     api = listOf("1.0.9")
-    authors = listOf("UramnOIL")
+    author = "UramnOIL"
+    loadBefore = listOf("Kotlib")
 }

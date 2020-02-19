@@ -1,4 +1,4 @@
-package com.github.uramnoil.ktform.element
+package com.uramnoil.ktform.element
 
 import cn.nukkit.form.element.ElementButton
 import cn.nukkit.form.element.ElementButtonImageData
